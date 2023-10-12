@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "esnext", // 目标 JavaScript 版本
+    "useDefineForClassFields": true, // 允许在类字段中使用“define”关键字
+    "module": "esnext", // 模块系统
+    "moduleResolution": "node", // 模块解析策略
+    "strict": true, // 启用严格模式
+    "noLib": false, // 不排除默认库的使用
+    "jsx": "preserve", // 保留 JSX 代码
+    "sourceMap": true, // 生成 source map
+    "resolveJsonModule": true, // 启用 JSON 模块的解析
+    "esModuleInterop": true, // 启用 ES 模块导入的互操作性
+    "lib": [
+      "esnext",
+      "dom"
+    ], // 引入的库
+    "baseUrl": ".", // 基础 URL
+    "allowJs": true, // 允许导入 JavaScript 文件
+    "paths": {
+      "@/*": [
+        "src/renderer/*"
+      ]
+    }, // 路径别名
+    "types": [
+      "vite/client",
+      "unplugin-icons/types/vue"
+    ], // 类型声明文件
+    "skipLibCheck": true, // 跳过类型检查所有的 .d.ts 文件
+    "allowSyntheticDefaultImports": true, // 允许合成默认导入
+    "forceConsistentCasingInFileNames": true // 确保导入时的大小写一致
+  },
+  "include": [
+    "src/renderer/**/*.d.ts",
+  ]
+}
