@@ -13,5 +13,3 @@
   <Versions />
   1112121111
 </template>
-
-<style></style>

@@ -2,7 +2,7 @@
  * @Author: yzh 2683849644@qq.com
  * @Date: 2023-10-12 20:49:59
  * @LastEditors: yzh 2683849644@qq.com
- * @LastEditTime: 2023-10-13 00:22:55
+ * @LastEditTime: 2023-10-17 22:42:53
  * @FilePath: \electron-app\electron.vite.config.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -14,6 +14,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 const pathSrcRenderer = resolve(__dirname, 'src/renderer')
 export default defineConfig(({ mode }) => {
@@ -76,8 +77,30 @@ export default defineConfig(({ mode }) => {
         }),
         Icons({
           autoInstall: true
+        }),
+        createSvgIconsPlugin({
+          // 指定需要缓存的图标文件夹
+          iconDirs: [resolve(process.cwd(), 'src/renderer/common/icons')],
+          // 指定symbolId格式
+          symbolId: 'icon-[dir]-[name]'
         })
-      ]
+      ],
+      server: {
+        // 允许IP访问
+        host: '0.0.0.0',
+        // 应用端口 (默认:3000)
+        port: 8080
+      },
+      css: {
+        // CSS 预处理器
+        preprocessorOptions: {
+          //define global scss variable
+          scss: {
+            javascriptEnabled: true,
+            additionalData: `@use '@/common/styles/variables.scss' as *;`
+          }
+        }
+      }
     }
   }
 })

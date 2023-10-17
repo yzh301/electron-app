@@ -10,7 +10,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 // 全局样式文件引入
 import '@/common/styles/frame.scss'
-
+import 'virtual:svg-icons-register'
 const app = createApp(App)
 
 app.mount('#app')

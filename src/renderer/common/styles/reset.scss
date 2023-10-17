@@ -1,3 +1,5 @@
+// 清零样式文件
+
 /* 新的 CSS 重置 - 版本 1.11（最后更新于 2023年9月20日）
    GitHub 页面: https://github.com/elad2412/the-new-css-reset
 */
@@ -6,106 +8,110 @@
    - "symbol *" 部分是为了解决 Firefox 中的 SVG 精灵图标 bug
    - 排除 "html" 元素，否则 Chrome 中的一个 bug 会破坏 CSS 的连字符属性 (https://github.com/elad2412/the-new-css-reset/issues/36)
 */
-*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
-    all: unset;
-    display: revert;
+*:where(:not(html, iframe, canvas, img, svg, video, audio, svg *, symbol *)) {
+  all: unset;
+  display: revert;
 }
 
 /* 首选的 box-sizing 值 */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* 修复移动 Safari 在横向模式下增加字体大小的问题 */
 html {
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 /* 重新应用锚标签的指针光标 */
 a,
 button {
-    cursor: revert;
+  cursor: revert;
 }
 
 /* 移除列表样式（项目符号/编号） */
 ol,
 ul,
 menu {
-    list-style: none;
+  list-style: none;
 }
 
 /* 使图像不能超出其容器 */
 img {
-    max-inline-size: 100%;
-    max-block-size: 100%;
+  max-inline-size: 100%;
+  max-block-size: 100%;
 }
 
 /* 移除表格中的单元格间距 */
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 /* Safari - 解决在 <body> 上使用 user-select:none 时的问题，文本输入不起作用 */
 input,
 textarea {
-    -webkit-user-select: auto;
+  -webkit-user-select: auto;
 }
 
 /* 为 Safari 上的文本区域元素恢复 'white-space' 属性 */
 textarea {
-    white-space: revert;
+  white-space: revert;
 }
 
 /* 允许最少的样式以允许样式 meter 元素 */
 meter {
-    -webkit-appearance: revert;
-    appearance: revert;
+  -webkit-appearance: revert;
+  appearance: revert;
 }
 
 /* 预格式化文本 - 仅用于此功能 */
 :where(pre) {
-    all: revert;
-    box-sizing: border-box;
+  all: revert;
+  box-sizing: border-box;
 }
 
 /* 重置输入占位符的默认文本不透明度 */
 ::placeholder {
-    color: unset;
+  color: unset;
 }
 
 /* 移除默认的点（•）符号 */
 ::marker {
-    content: initial;
+  content: initial;
 }
 
 /* 修复 'hidden' 属性的特性。
    display:revert; 以元素而不是属性的方式回退 */
 :where([hidden]) {
-    display: none;
+  display: none;
 }
 
 /* 修复 Chromium 浏览器中的 bug
    - 修复 content editable 属性将正常工作。
    - 为了在包装元素上使用 user-select:none 时，为 Safari 添加 webkit-user-select: auto; */
-:where([contenteditable]:not([contenteditable="false"])) {
-    -moz-user-modify: read-write;
-    -webkit-user-modify: read-write;
-    overflow-wrap: break-word;
-    -webkit-line-break: after-white-space;
-    -webkit-user-select: auto;
+:where([contenteditable]:not([contenteditable='false'])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
 }
 
 /* 重新应用可拖动特性 - 仅存在于 Chromium 和 Safari */
-:where([draggable="true"]) {
-    -webkit-user-drag: element;
+:where([draggable='true']) {
+  -webkit-user-drag: element;
 }
 
 /* 恢复 Modal 的本机行为 */
 :where(dialog:modal) {
-    all: revert;
-    box-sizing: border-box;
+  all: revert;
+  box-sizing: border-box;
+}
+
+svg {
+  vertical-align: -0.15em; //因icon大小被设置为和字体大小一致，而span等标签的下边缘会和字体的基线对齐，故需设置一个往下的偏移比例，来纠正视觉上的未对齐效果
 }

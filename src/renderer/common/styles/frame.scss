@@ -1,2 +1,6 @@
-@import "./reset.scss";
-@import "./global.scss";
+// 全局样式总入口文件
+@import './reset';
+@import './global';
+@import './sidebar';
+@import './dark';
+@import './variables';

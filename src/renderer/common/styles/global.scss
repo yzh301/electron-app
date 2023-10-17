@@ -1,18 +1,42 @@
+// 全局样式文件
 html,
 body,
 #root {
   height: 100%;
 }
 
-/*清浮动*/
+/* 清浮动 */
 .clearfix:after {
-  content: "";
   display: block;
   height: 0;
   clear: both;
   visibility: hidden;
+  content: '';
 }
 
 .clearfix {
   display: block;
+}
+
+.app-container {
+  padding: 10px;
+}
+
+.search-container {
+  padding: 18px 0 0 10px;
+  margin-bottom: 10px;
+  background-color: var(--el-bg-color-overlay);
+  border: 1px solid var(--el-border-color-light);
+  border-radius: 4px;
+  box-shadow: var(--el-box-shadow-light);
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32 160 255);
+  }
 }

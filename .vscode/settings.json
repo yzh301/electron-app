@@ -8,5 +8,13 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "editor.formatOnSave": true, // 保存格式化文件
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // 指定 prettier 为所有文件默认格式化器
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true, // 开启eslint自动检测
+    "source.fixAll.stylelint": true // 开启 Stylelint 保存自动检测
+  },
+  // Stylelint 校验文件
+  "stylelint.validate": ["css", "scss", "vue", "html"]
 }

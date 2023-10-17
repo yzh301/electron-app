@@ -7,13 +7,13 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Components: typeof import('./../components/index.vue')['default']
-    ElButton: typeof import('element-plus/es')['ElButton']
-    Header: typeof import('./../components/headers/header.vue')['default']
-    IEpInfoFilled: typeof import('~icons/ep/info-filled')['default']
-    IEpSuccessFilled: typeof import('~icons/ep/success-filled')['default']
-    IEpWarningFilled: typeof import('~icons/ep/warning-filled')['default']
-    IEpWarnTriangleFilled: typeof import('~icons/ep/warn-triangle-filled')['default']
-    Versions: typeof import('./../components/versions/index.vue')['default']
+    ElButton: (typeof import('element-plus/es'))['ElButton']
+    HeaderTop: (typeof import('./../components/HeaderTop/index.vue'))['default']
+    IEpInfoFilled: (typeof import('~icons/ep/info-filled'))['default']
+    IEpSuccessFilled: (typeof import('~icons/ep/success-filled'))['default']
+    IEpWarningFilled: (typeof import('~icons/ep/warning-filled'))['default']
+    IEpWarnTriangleFilled: (typeof import('~icons/ep/warn-triangle-filled'))['default']
+    SvgIcon: (typeof import('./../components/SvgIcon/index.vue'))['default']
+    Versions: (typeof import('./../components/Versions/index.vue'))['default']
   }
 }

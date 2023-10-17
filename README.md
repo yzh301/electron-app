@@ -32,7 +32,9 @@ $ pnpm build:mac
 # For Linux
 $ pnpm build:linux
 ```
+
 ### 样式命名规范
+
 ```
 G-xx： 表示全局样式，用来定义公用样式。
 P-xx:  表示页面样式，用来设置页面的背景色、尺寸、定制化调整在此页面的组件样式。
